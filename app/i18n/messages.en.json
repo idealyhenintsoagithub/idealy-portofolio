@@ -1,0 +1,95 @@
+{
+  "me": "Idealy henintsoa",
+  "title.myAdress": "My location",
+  "title.myServices": "My services",
+  "label.madagascar": "Madagascar",
+  "text.myAdresse": "Itaosy bemasoandro",
+  "salutation": "Hello i'm",
+  "software.developper": "Software developper",
+  "navbar.about": "About",
+  "navbar.experience": "Experiences",
+  "navbar.technology": "Technologies",
+  "navbar.project": "Projects",
+  "about": "Detail-oriented Symfony, API Platform, React, and Next.js developer with 3 years of experience in implementing, and maintaining web applications. Skilled in building robust APIs, integrating front-end interfaces, and optimizing performance. Proven ability to collaborate effectively in teams and deliver high-quality software solutions aligned with business objectives. I had the privilege of working with wordefull team at: ",
+  "experience.title": "Full-stack developper",
+  "experience.fullStack": "Create and maintain various project specially a CRM and ERP web app. Every product i delivery are fully customized with clients needs and specification. I stand with 3 principe in my job:",
+  "experience.quality": "Quality",
+  "experience.scallability": "Scallability",
+  "experience.productivity": "Productivity",
+  "technology.title": "I provide the newest and in demand technologie",
+  "technology.summary": "In a world where technological advancements occur at lightning speed staying ahead of the curve is more crucial than ever. The dawn of the latest and most in-demand technologies is reshaping industries, transforming how we live and work, and opening new avenues for innovation and growth. In this dynamic landscape, understanding and leveraging these cutting-edge technologies can provide a competitive edge and drive significant progress.",
+  "contact.contactMe": "Call-me",
+  "contact.question": "Have question?",
+  "contact.project": "Or project",
+  "textfield.name": "Name",
+  "textfield.email": "E-mail",
+  "textfield.message": "Messages",
+  "action.submitMessage": "Submit your message",
+  "link.blog": "Blog",
+  "link.offers": "All offers",
+  "link.technologie": "Techologies",
+  "navbar": {
+    "admin": "Admin",
+    "offer": "Offers",
+    "formation": "E-learning"
+  },
+  "title": {
+    "myAdress": "Adresse",
+    "myServices": "Mes services"
+  },
+  "technologie": {
+    "title": {
+      "solutionsProvided": "All solutions that I master"
+    }
+  },
+  "link": {
+    "demo": "Showcase",
+    "learning": "eLearning"
+  },
+  "showCase": {
+    "title": {
+      "webSite": "Web site",
+      "mobileApp": "Mobile apps"
+    },
+    "label": {
+      "webSite": "Site web",
+      "mobileApp": "Mobile apps"
+    }
+  },
+  "offer": {
+    "title": {
+      "webCreation": "Website creation",
+      "mobileApp": "Mobile apps",
+      "devOpsAndOther": "Devops and more",
+      "pageTitle": "What if your idea became a reality? Let's discuss your project to bring it to life."
+    },
+    "webCreation": {
+      "label": {
+        "facadeWeb": "Showcase site",
+        "entrepriseWeb": "CRM, ERP, B2B",
+        "ecommerce": "E-commerce, marketplace"
+      }
+    },
+    "mobileApp": {
+      "label": {
+        "entrepriseApp": "Enterprise app",
+        "connectedApp": "Connected app",
+        "nativeApp": "Native app"
+      }
+    },
+    "devOpsAndOther": {
+      "label": {
+        "devops": "Cloud managment",
+        "bddManagement": "Data base managment",
+        "performanceOptimization": "Performance and optimization",
+        "containerized": "Project containrization",
+        "migration": "Cloud migration"
+      }
+    }
+  },
+  "formation": {
+    "title": {
+      "formations": "Learn the newest technologies"
+    }
+  }
+}

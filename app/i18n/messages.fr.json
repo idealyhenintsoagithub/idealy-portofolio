@@ -1,0 +1,99 @@
+{
+  "me": "Idealy henintsoa",
+  "label.madagascar": "Madagascar",
+  "text.myAdresse": "Itaosy bemasoandro",
+  "salutation": "Bonjour je suis",
+  "software.developper": "Développeur full-stack",
+  "navbar.about": "À propos",
+  "navbar.experience": "Experience",
+  "navbar.technology": "Technologies",
+  "navbar.project": "Projets",
+  "about": "Développeur Symfony, API Platform, React et Next.js soucieux du détail avec 3 ans d'expérience dans la mise en œuvre et la maintenance d'applications Web. Compétent dans la création d'API robustes, l'intégration d'interfaces frontales et l'optimisation des performances. Capacité avérée à collaborer efficacement en équipe et à fournir des solutions logicielles de haute qualité alignées sur les objectifs commerciaux. J'ai eu le privilège de travailler avec l'équipe Wordefull chez:",
+  "experience.title": "Développeur full-stack",
+  "experience.fullStack": "Créer et maintenir divers projets, notamment une application Web CRM et ERP. Chaque produit que je livre est entièrement personnalisé en fonction des besoins et des spécifications des clients. Je défends 3 principes dans mon travail: ",
+  "experience.quality": "Qualité",
+  "experience.scallability": "Extensibilité",
+  "experience.productivity": "Productivité",
+  "technology.title": "Je vous fourni les téchnologies de demain",
+  "technology.summary": "Dans un monde où les progrès technologiques se produisent à une vitesse fulgurante, il est plus crucial que jamais de garder une longueur d’avance. L’avènement des technologies les plus récentes et les plus demandées remodèle les industries, transforme notre façon de vivre et de travailler et ouvre de nouvelles voies d’innovation et de croissance. Dans ce paysage dynamique, la compréhension et l’exploitation de ces technologies de pointe peuvent fournir un avantage concurrentiel et générer des progrès significatifs.",
+  "contact.contactMe": "Contacte-moi",
+  "contact.question": "Une question?",
+  "contact.project": "Un projet",
+  "textfield.name": "Nom",
+  "textfield.email": "E-mail",
+  "textfield.message": "Messages",
+  "action.submitMessage": "Envoyer le message",
+  "link.blog": "Blog",
+  "link.offers": "Offres",
+  "link.technologie": "Techologies",
+  "navbar": {
+    "admin": "Admin",
+    "offer": "Offres",
+    "formation": "Formations"
+  },
+  "title": {
+    "myAdress": "Adresse",
+    "myServices": "Mes services"
+  },
+  "link": {
+    "demo": "Demo",
+    "learning": "Formations"
+  },
+  "technologie": {
+    "title": {
+      "solutionsProvided": "Les solutions que je maitrise"
+    }
+  },
+  "offer": {
+    "title": {
+      "webCreation": "Création site internet",
+      "mobileApp": "Application mobile",
+      "devOpsAndOther": "Devops et autre",
+      "pageTitle": "Et si votre idée devenait réalité ? Discutons de votre projet pour lui donner vie."
+    },
+    "label": {
+      "pageContent": "Vous avez un projet e-commerce, CRM ou autre en tête ? Explorons sa faisabilité et travaillons ensemble à sa réalisation."
+    },
+    "webCreation": {
+      "label": {
+        "facadeWeb": "Site vitrine",
+        "entrepriseWeb": "CRM, ERP, B2B",
+        "ecommerce": "E-commerce, market-place"
+      }
+    },
+    "mobileApp": {
+      "label": {
+        "entrepriseApp": "Application d'entreprise",
+        "connectedApp": "Application connecter",
+        "nativeApp": "Application native"
+      }
+    },
+    "devOpsAndOther": {
+      "label": {
+        "devops": "Mise en place des serveurs",
+        "bddManagement": "Gestion des bases de donnée",
+        "performanceOptimization": "Optimisation des performance",
+        "containerized": "Containirisation des projets",
+        "migration": "Migration de serveur"
+      }
+    }
+  },
+  "showCase": {
+    "title": {
+      "webSite": "Site web",
+      "mobileApp": "Application mobile"
+    },
+    "label": {
+      "webSite": "Site web",
+      "mobileApp": "Application mobile"
+    }
+  },
+  "actions": {
+    "create_schedule": "Demander une rendez-vous?"
+  },
+  "formation": {
+    "title": {
+      "formations": "Formez-vous aux nouvelles technologie"
+    }
+  }
+}

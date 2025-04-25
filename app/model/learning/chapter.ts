@@ -1,0 +1,4 @@
+interface Chapter
+{
+    title: string;
+}
