@@ -1,6 +1,6 @@
 import { useTheme } from '@mui/material/styles';
 import { Box, IconButton, Typography } from "@mui/material";
-import React from "react";
+import React, { useMemo } from "react";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 import ColorModeContext from '../context/color-mode-context';
@@ -9,7 +9,6 @@ import LanguageSwitcher from './language-switcher';
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from 'react-router-dom';
 import { TECHNOLOGIES_PATH } from '../technologie/routes';
-import { ADMIN_PATH } from '../admin/admin-url';
 import { OFFER_PATH } from '../offer/routes';
 import { LEARNING } from '../learning/learningUrls';
 
@@ -40,33 +39,35 @@ const Navbar = () => {
   const colorMode = React.useContext(ColorModeContext);
   const locale = React.useContext(LocaleContext);
 
-  const linkMap: PageLink[] = [
-    {
-      id: 'navbar.about',
-      label: 'About',
-      href: '/#about',
-    },
-    {
-      id: 'navbar.offer',
-      label: intl.formatMessage({ id: 'navbar.offer' }),
-      href: OFFER_PATH
-    },
-    {
-      id: 'navbar.technology',
-      label: 'Technologie',
-      href: TECHNOLOGIES_PATH
-    },
-    {
-      id: 'navbar.formation',
-      label: intl.formatMessage({ id: 'navbar.formation' }),
-      href: LEARNING
-    },
-    {
-      id: 'navbar.project',
-      label: 'Project',
-      href: '/demo'
-    },
-  ];
+  const linkMap: PageLink[] = useMemo(() => (
+    [
+      {
+        id: 'navbar.about',
+        label: 'About',
+        href: '/#about',
+      },
+      {
+        id: 'navbar.offer',
+        label: intl.formatMessage({ id: 'navbar.offer' }),
+        href: OFFER_PATH
+      },
+      {
+        id: 'navbar.technology',
+        label: 'Technologie',
+        href: TECHNOLOGIES_PATH
+      },
+      {
+        id: 'navbar.formation',
+        label: intl.formatMessage({ id: 'navbar.formation' }),
+        href: LEARNING
+      },
+      {
+        id: 'navbar.project',
+        label: 'Project',
+        href: '/demo'
+      },
+    ]
+  ), []);
 
 	return (
 		<>
@@ -83,6 +84,7 @@ const Navbar = () => {
         flexWrap: 'wrap-reverse',
         zIndex: 103,
         mb: 5,
+        bgcolor: theme.palette.background.default,
 			}}>
 				{ linkMap.map((link: PageLink) => (
           <PageLinkAnchor

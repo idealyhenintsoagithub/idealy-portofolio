@@ -2,6 +2,7 @@
 import { Inter } from "next/font/google";
 import React, { useMemo } from "react";
 import { Grid, Paper, ThemeProvider, Box } from "@mui/material";
+import CssBaseline from '@mui/material/CssBaseline';
 import {IntlProvider } from 'react-intl';
 import {
   createBrowserRouter,
@@ -93,7 +94,8 @@ const App = () => {
         <LocaleContext.Provider value={localeMode}>
           <ColorModeContext.Provider value={colorMode}>
             <IntlProvider messages={flattenedMessages} locale={currentLocale} defaultLocale="en">
-              <ThemeProvider theme={DarkTheme}>
+              <ThemeProvider theme={ mode == 'light' ? LightTheme : DarkTheme }>
+                <CssBaseline />
                 <Box sx={{ minHeight: "100dvh" }}>
                   <Routes>
                     <Route path={HOME_URL} element={(<Home />)} />

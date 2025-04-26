@@ -13,7 +13,10 @@ const sx = {
 const PresentationSm = () => {
   return (
     <Box
-      sx={{ position: 'sticky', top: window.innerHeight / 3 }}
+      sx={{
+        position: 'sticky',
+        top: window.innerHeight / 3,
+      }}
     >
       <Box sx={{ ...sx }}>
         <Box>
