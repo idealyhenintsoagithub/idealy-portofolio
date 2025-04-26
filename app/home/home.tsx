@@ -14,15 +14,13 @@ const firstSx = {
   bottom: 0,
   left: 0,
   right: 0,
-  background: 'white',
   zIndex: 5,
 };
 
 const secondSx = {
   position: 'relative',
   zIndex: 6,
-  background: 'white',
-  top: '100vh',
+  top: '100dvh',
   p: 3,
 };
 

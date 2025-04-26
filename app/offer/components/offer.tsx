@@ -1,9 +1,13 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useIntl } from "react-intl";
 import OfferItemComponent from "./offer-item";
 import Grid from "@mui/material/Grid";
 import OfferPresentation from "./offer-presentation";
 import LayoutWrapper from "@/app/layout-wrapper";
+import OfferPresentationSm from "./offer-presentation-sm";
+import { useMemo } from "react";
+import OfferItemSm from "./offer-item-sm";
+import shadows from "@mui/material/styles/shadows";
 
 export type OfferItem = {
   label: string;
@@ -77,19 +81,43 @@ export const offersList: Offer[] = [
 
 const Offer = () => {
   const intl = useIntl();
+  const theme = useTheme();
+  const isSm = useMediaQuery(theme.breakpoints.down('md'));
 
-  const offerItemsComponent = offersList.map((offer: Offer) => {
+  const offerItemsComponent = useMemo(() => {
+    if (isSm) {
+      return offersList.map((offer: Offer) => (
+        <Box sx={{ m: 2 }}><OfferItemSm offer={offer} /></Box>
+      ));
+    }
+
     return (
-      <OfferItemComponent offer={offer} />
-    )
-  });
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          ' div': {
+            width: '30%',
+          }
+        }}
+      >
+        {
+          offersList.map((offer: Offer) => {
+            return (
+              <OfferItemSm offer={offer} />
+            );
+          })
+        }
+      </Box>
+    );
+  }, []);
 
   return (
     <LayoutWrapper>
-      <OfferPresentation />
-      <Grid container spacing={2} sx={{ justifyContent: "center" }}>
-        {offerItemsComponent}
-      </Grid>
+      <Box sx={{ mb: 5 }}>
+        { isSm ? <OfferPresentationSm /> : <OfferPresentation /> }
+        { offerItemsComponent }
+      </Box>
     </LayoutWrapper>
   );
 };

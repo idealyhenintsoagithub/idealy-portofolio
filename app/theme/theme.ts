@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, Theme } from '@mui/material/styles';
 
-export const DarkTheme = createTheme({
+export const DarkTheme: Theme = createTheme({
     palette: {
       mode: 'dark',
       primary: {
@@ -10,15 +10,19 @@ export const DarkTheme = createTheme({
         contrastText: '#fff',
       },
       secondary: {
-        main: '#F3F3F3',
-        light: '#F5F5F5',
+        main: '#black',
+        light: '#black',
         dark: '#ba000d',
         contrastText: '#000',
       },
+      background: {
+        default: 'black',
+        paper: 'black',
+      }
     },
   });
 
-export const LightTheme = createTheme({
+export const LightTheme: Theme = createTheme({
     palette: {
       mode: 'light',
       primary: {
@@ -33,6 +37,10 @@ export const LightTheme = createTheme({
         dark: '#ba000d',
         contrastText: '#000',
       },
+      background: {
+        default: 'black',
+        paper: 'black',
+      }
     },
   });
 

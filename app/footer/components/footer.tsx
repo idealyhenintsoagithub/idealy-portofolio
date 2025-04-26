@@ -7,7 +7,6 @@ const Footer = () => {
 
   return (
     <Box sx={{
-      bgcolor: theme.palette.mode === 'dark' ? '#282828' : '#f0eded',
       position: 'relative',
       zIndex: 10,
       p: 3,

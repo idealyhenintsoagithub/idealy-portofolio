@@ -1,4 +1,4 @@
-import { Grid, Box, Typography } from "@mui/material";
+import { Grid, Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 import { FormattedMessage } from "react-intl";
 
@@ -6,7 +6,7 @@ const OfferPresentation = () => {
   return (
     <Box sx={{ mb: 5 }}>
       <Grid container>
-        <Grid item xs={6} sx={{ px: 2 }}>
+        <Grid item md={6} sx={{ px: 2 }}>
           <Typography variant="h3">
             <FormattedMessage id="offer.title.pageTitle" />
           </Typography>
@@ -14,7 +14,7 @@ const OfferPresentation = () => {
             <FormattedMessage id="offer.label.pageContent" />
           </Typography>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item md={6}>
           <Image
             src="/images/desk_workspace_2.jpg"
             width={600}

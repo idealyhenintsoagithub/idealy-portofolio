@@ -21,13 +21,13 @@ const TechnologieInfo = (props: TechnologieInfoProps) => {
 			<>
 				<Button
 					onClick={() => navigate(TECH_DETAILS.replaceAll(':id', String(technologie.id)))}
-					sx={{ p: 2, m: 2, bgcolor: 'white', maxWidth: '200px' }}
+					sx={{ p: 2, m: 2, maxWidth: '200px' }}
 					onMouseEnter={() => setDisplayInfo(!dispalyInfo)}
 					onMouseLeave={() => setDisplayInfo(!dispalyInfo)}
 				>
 					<Paper
 						elevation={2}
-						sx={{ p: 2, m: 2, bgcolor: 'white', maxWidth: '200px' }}
+						sx={{ p: 2, m: 2, maxWidth: '200px' }}
 					>
 						<Image
 							src={technologie.imageSrc ?? ''}
@@ -40,7 +40,6 @@ const TechnologieInfo = (props: TechnologieInfoProps) => {
 						sx={{
 							display: dispalyInfo ? 'block' : 'none',
 							position: 'absolute',
-							background: '#f1f1f194',
 							backdropFilter: 'blur(5px)',
 							height: '100%',
 							overflow: 'hidden',

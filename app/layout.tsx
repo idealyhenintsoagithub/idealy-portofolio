@@ -1,11 +1,8 @@
 "use client"
-
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import React, { useMemo } from "react";
-import { Grid, Paper, ThemeProvider } from "@mui/material";
-import { createTheme } from '@mui/material/styles';
-import {IntlProvider, FormattedMessage, FormattedNumber} from 'react-intl';
+import { Grid, Paper, ThemeProvider, Box } from "@mui/material";
+import {IntlProvider } from 'react-intl';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -21,9 +18,6 @@ import enMessages from "./i18n/messages.en.json";
 import type { ReactNode } from "react";
 import { StoreProvider } from "./StoreProvider";
 import "./styles/globals.css";
-import Blog from "./blog/components/blog";
-import LayoutWrapper from "./layout-wrapper";
-import Technologies from "./technologie/components/technologie";
 import Offer from "./offer/components/offer";
 import { TECHNOLOGIES_PATH } from "./technologie/routes";
 import { OFFER_PATH } from "./offer/routes";
@@ -32,8 +26,7 @@ import ShowCase from "./show-case/components/showCase";
 import LearningContainer from "./learning/components/learningContainer";
 import { LEARNING } from "./learning/learningUrls";
 import TechContainer from "./technologie/tech-container";
-import AdminContainer from "./admin/admin-container";
-import { ADMIN_PATH } from "./admin/admin-url";
+import { HOME_URL } from "./home/home-url";
 
 interface Props {
   readonly children: ReactNode;
@@ -91,6 +84,8 @@ const App = () => {
     return messages ? flattenMessages(messages) : {};
   }, [messages]);
 
+  console.info({ mode });
+
   return (
     <StoreProvider>
       <html lang="en">
@@ -98,21 +93,16 @@ const App = () => {
         <LocaleContext.Provider value={localeMode}>
           <ColorModeContext.Provider value={colorMode}>
             <IntlProvider messages={flattenedMessages} locale={currentLocale} defaultLocale="en">
-              <ThemeProvider theme={mode === 'dark' ? DarkTheme : LightTheme}>
-                <Paper sx={{ minHeight: "100vh" }}>
+              <ThemeProvider theme={DarkTheme}>
+                <Box sx={{ minHeight: "100dvh" }}>
                   <Routes>
-                    <Route path="/" element={(<Home />)} />
-                    <Route path="/blog" element={(<Blog />)} />
-                    <Route
-                      path={`${TECHNOLOGIES_PATH}/*`}
-                      element={(<TechContainer />)
-                    }/>
+                    <Route path={HOME_URL} element={(<Home />)} />
+                    <Route path={`${TECHNOLOGIES_PATH}/*`} element={(<TechContainer />)} />
                     <Route path={OFFER_PATH} element={(<Offer />)} />
                     <Route path={SHOW_CASE_PATH} element={(<ShowCase />)} />
                     <Route path={`${LEARNING}/*`} element={(<LearningContainer />)} />
-                    <Route path={`${ADMIN_PATH}/*`} element={(<AdminContainer />)} />
                   </Routes>
-                </Paper>
+                </Box>
               </ThemeProvider>
             </IntlProvider>
           </ColorModeContext.Provider>

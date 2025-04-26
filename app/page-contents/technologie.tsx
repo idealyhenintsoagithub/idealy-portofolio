@@ -30,7 +30,7 @@ const Technologie = () => {
         <Typography> <FormattedMessage id="technology.summary" /></Typography>
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'space-around', flexWrap: 'wrap' }}>
           {imageMap.map((image) => (
-            <Box sx={{ p: 2, my: 2, mx: 1, bgcolor: 'white' }}>
+            <Box sx={{ p: 2, my: 2, mx: 1 }}>
               <Image src={image} width={imagewidth} height={imageHeight} alt={image} />
             </Box>
           ))}

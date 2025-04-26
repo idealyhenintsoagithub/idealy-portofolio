@@ -25,13 +25,11 @@ const ContactMe = () => {
       position: 'absolute',
       width: '600px',
       height: '500px',
-      backgroundColor: mode === 'dark' ? "#282828" : "white",
       zIndex: 105,
       top: '-25%',
       marginLeft: '80px',
       p: 2,
       pt: 4,
-      boxShadow: mode === 'dark' ? "5px 5px 11px #1f1e1e" : "5px 5px 11px #d3d3d3"
     }}>
       <Typography variant="h5">
         <FormattedMessage id="contact.contactMe" />

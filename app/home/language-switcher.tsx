@@ -49,7 +49,6 @@ const LanguageSwitcher = () => {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         sx={{
-          color: theme.palette.mode === 'dark' ? 'white' : 'black',
           textTransform: 'capitalize',
           fontWeight: 500,
         }}

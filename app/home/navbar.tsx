@@ -78,7 +78,6 @@ const Navbar = () => {
 				top: 0,
 				minWidth: '100%',
 				minHeight: 34,
-				bgcolor: theme.palette.mode == 'dark' ? theme.palette.primary.dark : theme.palette.primary.light,
 				p: 2,
 				justifyContent: 'flex-end',
         flexWrap: 'wrap-reverse',
