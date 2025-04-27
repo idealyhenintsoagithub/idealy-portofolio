@@ -18,10 +18,8 @@ const firstSx = {
 };
 
 const secondSx = {
-  position: 'relative',
   zIndex: 6,
-  top: '100dvh',
-  p: 3,
+  mt: '100vh',
 };
 
 const Home = () => {
@@ -31,7 +29,7 @@ const Home = () => {
 
 	return (
     <LayoutWrapper>
-      <Grid container sx={{ mt: '100px' }}>
+      <Grid container>
         <Grid md={6} sx={ isSmallScreen ? firstSx : {}}>
           { isSmallScreen ? (<PresentationSm />) :  (<Presentation />) }
         </Grid>

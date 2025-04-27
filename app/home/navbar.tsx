@@ -1,3 +1,4 @@
+import './navbar.css';
 import { useTheme } from '@mui/material/styles';
 import { Box, IconButton, Typography } from "@mui/material";
 import React, { useMemo } from "react";
@@ -7,10 +8,11 @@ import ColorModeContext from '../context/color-mode-context';
 import LocaleContext from '../context/locale-context';
 import LanguageSwitcher from './language-switcher';
 import { FormattedMessage, useIntl } from "react-intl";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { TECHNOLOGIES_PATH } from '../technologie/routes';
 import { OFFER_PATH } from '../offer/routes';
 import { LEARNING } from '../learning/learningUrls';
+import { SHOW_CASE_PATH } from '../show-case/showCaseUrl';
 
 type PageLink = {
   id: string,
@@ -22,14 +24,20 @@ const PageLinkAnchor = (props: PageLink) => {
   const { id, label, href } = props;
 
   return (
-    <Typography sx={{
-      minWidth: 100,
-      textDecoration: 'none',
-    }}>
-      <Link to={href}>
-          <FormattedMessage id={id} />
-      </Link>
-    </Typography>
+    <NavLink
+      to={href}
+      className={({ isActive, isPending}) => isActive ? 'active' : ''}
+    >
+      <Typography
+        className='navbar-link'
+        sx={{
+          minWidth: 100,
+          textDecoration: 'none',
+        }}
+      >
+        <FormattedMessage id={id} />
+      </Typography>
+    </NavLink>
   );
 }
 
@@ -64,7 +72,7 @@ const Navbar = () => {
       {
         id: 'navbar.project',
         label: 'Project',
-        href: '/demo'
+        href: SHOW_CASE_PATH,
       },
     ]
   ), []);
@@ -91,7 +99,8 @@ const Navbar = () => {
             id={link.id}
             label={link.label}
             href={link.href}
-          />))}
+          />))
+        }
         <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
           {theme.palette.mode === 'dark' ? <BrightnessHighIcon /> : <Brightness4Icon />}
         </IconButton>

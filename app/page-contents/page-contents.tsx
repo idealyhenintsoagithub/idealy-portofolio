@@ -9,7 +9,7 @@ const textBold = { fontWeight: 'bold' };
 const PageContents = () => {
   const theme = useTheme();
   return (
-    <Box sx={{ pb: 10, bgcolor: theme.palette.background.default }}>
+    <Box sx={{ p: 4, bgcolor: theme.palette.background.default }}>
       <AboutMe />
       <Experience />
       <Technologie />

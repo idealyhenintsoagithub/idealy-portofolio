@@ -5,6 +5,7 @@ import XIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { FormattedMessage } from "react-intl";
 import { useMemo } from "react";
+import zIndex from "@mui/material/styles/zIndex";
 
 const Presentation = () => {
   const theme = useTheme();
@@ -20,6 +21,7 @@ const Presentation = () => {
       textAlign: isSmall ? 'center' : 'left',
       mb: isSmall ? 4 : 0,
       width: 'inherit',
+      zIndex: 5,
     };
   }, [isSmall, theme]);
 

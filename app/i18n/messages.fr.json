@@ -78,8 +78,30 @@
       }
     }
   },
+  "learning": {
+    "label": {
+      "duration": "Durée: {duration} jour(s)"
+    },
+    "symfony": {
+      "title": "Initier à symfony",
+      "description": "Symfony est un framework PHP open-source utilisé pour développer des applications web. Il fournit une structure solide, des outils puissants et des composants réutilisables pour rendre le développement plus rapide, plus propre et plus maintenable."
+    },
+    "apiPlatform": {
+      "title": "Boster vôtre web avec Api-platform",
+      "description": "API Platform est un framework PHP basé sur Symfony qui permet de créer des API rapidement (REST, GraphQL…). Il génère automatiquement une API à partir de tes entités (modèles de données), tout en respectant les standards du web."
+    },
+    "react": {
+      "title": "Dynamiser vôtre application avec react",
+      "description": "React est un framework JavaScript (techniquement une bibliothèque) utilisé pour construire des interfaces utilisateur interactives, surtout pour des applications web rapides et dynamiques. Il fonctionne avec des composants réutilisables et met à jour l'affichage de manière intelligente sans recharger toute la page."
+    },
+    "flutter": {
+      "title": "Créer des applications multi-platforme avec flutter",
+      "description": "Flutter est un framework open-source créé par Google pour développer des applications mobiles, web et desktop avec une seule base de code. Il utilise le langage Dart et permet de créer des apps très rapides et jolies, avec des animations fluides."
+    }
+  },
   "showCase": {
     "title": {
+      "pageTitle": "Des auquels j'ai travaillé", 
       "webSite": "Site web",
       "mobileApp": "Application mobile"
     },

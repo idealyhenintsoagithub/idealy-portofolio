@@ -1,7 +1,5 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useIntl } from "react-intl";
-import OfferItemComponent from "./offer-item";
-import Grid from "@mui/material/Grid";
 import OfferPresentation from "./offer-presentation";
 import LayoutWrapper from "@/app/layout-wrapper";
 import OfferPresentationSm from "./offer-presentation-sm";

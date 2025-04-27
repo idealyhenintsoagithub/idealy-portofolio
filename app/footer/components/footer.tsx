@@ -1,22 +1,30 @@
-import { Box, useTheme } from "@mui/material";
+import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
 import ContactMe from "@/app/contact/contact";
 import FooterDetails from "./footer-detais";
 
 const Footer = () => {
   const theme = useTheme();
+  const isSm = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Box sx={{
-      position: 'relative',
-      zIndex: 10,
-      p: 3,
-      height: "100vh",
-      marginTop: "200px",
-      minWidth: "100%",
-    }}>
-      <ContactMe />
-      <FooterDetails />
-    </Box>
+    <Grid 
+      container
+      sx={{
+        p: 4,
+        bgcolor: theme.palette.grey[100],
+        position: 'relative',
+        zIndex: 6,
+        minHeight: '100dvh',
+        justifyContent: isSm ? 'center': 'unset',
+      }}
+    >
+      <Grid item md={6}>
+        <ContactMe />
+      </Grid>
+      <Grid item md={6} width={"100%"} >
+        <FooterDetails />
+      </Grid>
+    </Grid>
   );
 }
 

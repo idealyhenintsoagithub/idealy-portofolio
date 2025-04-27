@@ -46,6 +46,27 @@
     "demo": "Showcase",
     "learning": "eLearning"
   },
+  "learning": {
+    "label": {
+      "duration": "Duration: {duration} day(s)"
+    },
+    "symfony": {
+      "title": "Getting Started with Symfony",
+      "description": "Symfony is an open-source PHP framework used for developing web applications. It provides a robust structure, powerful tools, and reusable components to make development faster, cleaner, and more maintainable."
+    },
+    "apiPlatform": {
+      "title": "Boost your website with Api-platform",
+      "description": "API Platform is a PHP framework based on Symfony that allows you to quickly create APIs (REST, GraphQL, etc.). It automatically generates an API from your entities (data models), while respecting web standards."
+    },
+    "react": {
+      "title": "Boost your application with React",
+      "description": "React is a JavaScript framework (technically a library) used to build interactive user interfaces, especially for fast, dynamic web applications. It works with reusable components and intelligently updates the display without reloading the entire page."
+    },
+    "flutter": {
+      "title": "Build Cross-Platform Apps with Flutter",
+      "description": "Flutter is an open-source framework created by Google for developing mobile, web, and desktop applications with a single codebase. It uses the Dart language and allows you to create very fast and beautiful apps with smooth animations."
+    }
+  },
   "showCase": {
     "title": {
       "webSite": "Web site",
@@ -62,6 +83,9 @@
       "mobileApp": "Mobile apps",
       "devOpsAndOther": "Devops and more",
       "pageTitle": "What if your idea became a reality? Let's discuss your project to bring it to life."
+    },
+    "label": {
+      "pageContent": "Do you have an e-commerce, CRM, or other project in mind? Let's explore its feasibility and work together to make it happen."
     },
     "webCreation": {
       "label": {

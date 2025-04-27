@@ -5,13 +5,11 @@ import StateProcessing from "../labs/stateProcessing";
 import LayoutWrapper from "@/app/layout-wrapper";
 
 const LearningContainer = () => {
-    const intl = useIntl();
+  const intl = useIntl();
 
   return (
     <LayoutWrapper>
-      <Box sx={{ mt: 5 }}>
-          <LearningList />
-      </Box>
+      <LearningList />
     </LayoutWrapper>
   );
 }

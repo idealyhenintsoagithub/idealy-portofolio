@@ -1,15 +1,17 @@
 import { Learning } from "@/app/model/learning";
 import { Box, Grid, Paper, Typography } from "@mui/material";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type LearningItemProps = {
   item: Learning;
 };
 
 const LearningItem = (props: LearningItemProps) => {
+  const intl = useIntl();
   const { item } = props;
 
   return (
-    <Paper sx={{ display: 'flex' }} elevation={2}>
+    <Paper sx={{ display: 'flex', borderRadius: '8px', }} elevation={2}>
       <Box sx={{ p: 2 }}>
         <img
           src={item.coverPage?.src}
@@ -19,13 +21,25 @@ const LearningItem = (props: LearningItemProps) => {
         />
       </Box>
       <Box sx={{ p: 2 }}>
-        <Typography sx={{ fontWeight: 'bold', color: 'red' }}>
+        <Typography sx={{ fontWeight: 'bold', color: '#EF5350' }}>
           {item?.type ?? 'Back-end | PHP' }
         </Typography>
-        <Typography variant="h5" py={1} >{item.title}</Typography>
-        <Typography variant="body2" >{item.description}</Typography>
+        <Typography variant="h5" py={1} >
+          <FormattedMessage id={item.title} />
+        </Typography>
+        <Typography variant="body2" >
+          <FormattedMessage id={item.description} />
+        </Typography>
         <Box sx={{ borderTop: '1px solid grey', my: 1, pt: 1 }}>
-          <Typography variant="body2" sx={{ color: 'red', fontSize: '12px' }}>Durée: 4jours</Typography>
+          <Typography variant="body2" sx={{ color: '#F44336', fontSize: '12px' }}>
+            {
+              intl.formatMessage({
+                id: 'learning.label.duration',
+              }, {
+                duration: item.duration,
+              })
+            }
+          </Typography>
         </Box>
       </Box>
     </Paper>

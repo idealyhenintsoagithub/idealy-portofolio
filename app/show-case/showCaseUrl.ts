@@ -1,1 +1,1 @@
-export const SHOW_CASE_PATH = '/demo';
+export const SHOW_CASE_PATH = '/show-case';

@@ -12,7 +12,7 @@ const imagewidth = 150;
 
 const Technologies = () => (
   <Box>
-    <Typography sx={{ textAlign: "center", mb: 5 }} variant="h3" >
+    <Typography sx={{ textAlign: "center", my: 3 }} variant="h4" >
       <FormattedMessage id="technologie.title.solutionsProvided" />
     </Typography>
     <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', flexWrap: 'wrap' }}>

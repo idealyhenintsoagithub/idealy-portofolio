@@ -1,6 +1,6 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import { useMemo } from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import LayoutWrapper from "@/app/layout-wrapper";
 import ShowCaseItem from "./showCaseItem";
 
@@ -55,10 +55,13 @@ const ShowCase = () => {
 
   return (
   <LayoutWrapper>
-    <Grid container spacing={4}>
+    <Typography sx={{ textAlign: 'center', my: 3 }} variant="h4">
+      <FormattedMessage id="showCase.title.pageTitle" />
+    </Typography>
+    <Grid container>
       {
         projectFixture.map((project: Project) => (
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6} p={2}>
             <ShowCaseItem item={project} />
           </Grid>
         ))

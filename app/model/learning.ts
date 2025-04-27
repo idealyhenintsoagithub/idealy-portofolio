@@ -8,4 +8,6 @@ export interface Learning {
   coverPage?: Image;
 
   chapters?: Chapter[];
+
+  duration?: string;
 }

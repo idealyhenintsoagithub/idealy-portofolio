@@ -10,7 +10,7 @@ const ShowCaseItem = ({ item }: ShowCaseItemProps) => {
   const intl = useIntl();
 
   return (
-    <Paper sx={{ display: 'flex' }} elevation={2}>
+    <Paper sx={{ display: 'flex', borderRadius: '8px' }} elevation={2}>
       <Box sx={{ p: 2 }}>
         <img
           src={item.image.src}
@@ -20,7 +20,7 @@ const ShowCaseItem = ({ item }: ShowCaseItemProps) => {
         />
       </Box>
       <Box sx={{ p: 2 }}>
-        <Typography sx={{ fontWeight: 'bold', color: 'red' }}>
+        <Typography sx={{ fontWeight: 'bold', color: '#EF5350' }}>
           {
             intl.formatMessage({ id: `showCase.label.${item.type}` })
           }

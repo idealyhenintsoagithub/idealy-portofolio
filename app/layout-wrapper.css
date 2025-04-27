@@ -1,0 +1,13 @@
+.page {
+  position: relative;
+  width: 100%;
+  transition: opacity 0.65s ease-in-out;
+}
+
+.page.fadeIn {
+  opacity: 0;
+}
+
+.page.fadeOut {
+  opacity: 1;
+}
