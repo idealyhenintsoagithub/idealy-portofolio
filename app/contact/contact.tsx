@@ -83,7 +83,6 @@ const ContactMe = () => {
           sx={{
             textTransform: "none",
             fontSize: "1.3rem",
-            color: "#2196f3"
           }}
         >
           { isLoading ? (<Typography>Sending...</Typography>) : (<FormattedMessage id="action.submitMessage" />) }

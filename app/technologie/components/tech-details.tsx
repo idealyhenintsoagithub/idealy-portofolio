@@ -6,9 +6,6 @@ const TechDetails = () => {
     const params = useParams();
     const intl = useIntl();
 
-    console.info({ params });
-    console.info("lorem ipsum");
-
     return (
         <Box>
             <Typography variant="h5">

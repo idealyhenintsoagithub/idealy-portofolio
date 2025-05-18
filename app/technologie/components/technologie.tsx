@@ -1,14 +1,7 @@
 import { Box, Button, Paper, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import { Technologie, TECHNOLOGIES_MAPS } from "../constants/technologies";
-import Image from "next/image";
-import { useNavigate } from "react-router-dom";
-import { TECH_DETAILS } from "../routes";
-import { useCallback, useState } from "react";
 import TechnologieInfo from "./technologie-info";
-
-const imageHeight = 150;
-const imagewidth = 150;
 
 const Technologies = () => (
   <Box>

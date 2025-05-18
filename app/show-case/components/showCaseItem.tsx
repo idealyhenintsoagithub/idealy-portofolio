@@ -1,4 +1,5 @@
 import { Learning } from "@/app/model/learning";
+import Project from "@/models/project";
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import { useIntl } from "react-intl";
 
@@ -12,12 +13,12 @@ const ShowCaseItem = ({ item }: ShowCaseItemProps) => {
   return (
     <Paper sx={{ display: 'flex', borderRadius: '8px' }} elevation={2}>
       <Box sx={{ p: 2 }}>
-        <img
+        {/* <img
           src={item.image.src}
           alt={item.image.name}
           width="200px"
           height="200px"
-        />
+        /> */}
       </Box>
       <Box sx={{ p: 2 }}>
         <Typography sx={{ fontWeight: 'bold', color: '#EF5350' }}>
@@ -25,7 +26,7 @@ const ShowCaseItem = ({ item }: ShowCaseItemProps) => {
             intl.formatMessage({ id: `showCase.label.${item.type}` })
           }
         </Typography>
-        <Typography variant="h5" py={1} >{item.title}</Typography>
+        <Typography variant="h5" py={1} >{item.name}</Typography>
         <Typography variant="body2" >{item.description}</Typography>
       </Box>
     </Paper>

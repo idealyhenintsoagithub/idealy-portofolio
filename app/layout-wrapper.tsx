@@ -27,7 +27,7 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
       <Box
         className={`page ${transitionStage}`}
         key={location.pathname}
-        sx={{ marginTop: '100px' }}
+        sx={{ marginTop: '100px', p: 5 }}
       >
         {children}
       </Box>

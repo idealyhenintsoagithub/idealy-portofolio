@@ -28,6 +28,10 @@ import LearningContainer from "./learning/components/learningContainer";
 import { LEARNING } from "./learning/learningUrls";
 import TechContainer from "./technologie/tech-container";
 import { HOME_URL } from "./home/home-url";
+import { PROJECT_BASE_PATH, PROJECT_DETAIL_PATH } from "./project-detail/projectDetailUrl";
+import ProjectDetail from "./project-detail/components/projectDetail";
+import { store } from './../store/store'
+import { Provider } from 'react-redux'
 
 interface Props {
   readonly children: ReactNode;
@@ -91,24 +95,27 @@ const App = () => {
     <StoreProvider>
       <html lang="en">
         <body>
-        <LocaleContext.Provider value={localeMode}>
-          <ColorModeContext.Provider value={colorMode}>
-            <IntlProvider messages={flattenedMessages} locale={currentLocale} defaultLocale="en">
-              <ThemeProvider theme={ mode == 'light' ? LightTheme : DarkTheme }>
-                <CssBaseline />
-                <Box sx={{ minHeight: "100dvh" }}>
-                  <Routes>
-                    <Route path={HOME_URL} element={(<Home />)} />
-                    <Route path={`${TECHNOLOGIES_PATH}/*`} element={(<TechContainer />)} />
-                    <Route path={OFFER_PATH} element={(<Offer />)} />
-                    <Route path={SHOW_CASE_PATH} element={(<ShowCase />)} />
-                    <Route path={`${LEARNING}/*`} element={(<LearningContainer />)} />
-                  </Routes>
-                </Box>
-              </ThemeProvider>
-            </IntlProvider>
-          </ColorModeContext.Provider>
-        </LocaleContext.Provider>
+          <Provider store={store}>
+            <LocaleContext.Provider value={localeMode}>
+              <ColorModeContext.Provider value={colorMode}>
+                <IntlProvider messages={flattenedMessages} locale={currentLocale} defaultLocale="en">
+                  <ThemeProvider theme={ mode == 'light' ? LightTheme : DarkTheme }>
+                    <CssBaseline />
+                    <Box sx={{ minHeight: "100dvh" }}>
+                      <Routes>
+                        <Route path={HOME_URL} element={(<Home />)} />
+                        <Route path={`${TECHNOLOGIES_PATH}/*`} element={(<TechContainer />)} />
+                        <Route path={OFFER_PATH} element={(<Offer />)} />
+                        <Route path={SHOW_CASE_PATH} element={(<ShowCase />)} />
+                        <Route path={`${LEARNING}/*`} element={(<LearningContainer />)} />
+                        <Route path={`${PROJECT_DETAIL_PATH}`} element={(<ProjectDetail />)} />
+                      </Routes>
+                    </Box>
+                  </ThemeProvider>
+                </IntlProvider>
+              </ColorModeContext.Provider>
+            </LocaleContext.Provider>
+          </Provider>
         </body>
       </html>
     </StoreProvider>
