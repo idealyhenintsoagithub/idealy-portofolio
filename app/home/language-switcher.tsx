@@ -3,7 +3,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import LocaleContext from '../context/locale-context';
-import { ListItemIcon, Typography } from '@mui/material';
+import { ListItemIcon, ListItemText } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import Image from 'next/image';
 import { useTheme } from '@mui/material/styles';
 import LanguageIcon from '../utils/language';
@@ -41,19 +43,20 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div>
+    <>
       <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={undefined}
         onClick={handleClick}
         sx={{
           textTransform: 'capitalize',
           fontWeight: 500,
         }}
       >
-        <LanguageIcon locale={locale.currentLocale} withLabel={true} />
+        <LanguageIcon locale={locale.currentLocale} withLabel={false} />
+        { open ? <ArrowDropUpIcon /> : <ArrowDropDownIcon /> }
       </Button>
       <Menu
         id="basic-menu"
@@ -63,17 +66,27 @@ const LanguageSwitcher = () => {
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'center',
+        }}
       >
         { Array.isArray(languageMap) && languageMap.map((langue: Language) => (
           <MenuItem onClick={() => locale.changeLocale(langue.value)}>
             <ListItemIcon>
               <Image src={langue.icon} width={25} height={8} alt={langue.value } />
             </ListItemIcon>
-            { langue.label }
+            <ListItemText>
+              { langue.label }
+            </ListItemText>
           </MenuItem>
         ))}
-      </Menu>
-    </div>
+      </Menu> 
+    </>
   )
 };
 

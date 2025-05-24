@@ -3,6 +3,8 @@ import { useMemo } from "react";
 import { FormattedMessage } from "react-intl";
 import { Control, useForm, SubmitHandler } from 'react-hook-form';
 import { useCreateMessageMutation } from "@/lib/features/message/messageAPI";
+import CustomTextInput from "@/core/components/CustomTextInput";
+import CustomButton from "@/core/components/CustomButton";
 
 const ContactMe = () => {
   const theme = useTheme();
@@ -23,7 +25,7 @@ const ContactMe = () => {
   return (
     <Box>
       <Box>
-        <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+        <Typography variant="h4" sx={{ fontWeight: "bold", pb: 1 }}>
           <FormattedMessage id="contact.question" />
           <FormattedMessage id="contact.project" />
         </Typography>
@@ -37,56 +39,35 @@ const ContactMe = () => {
         onSubmit={
           handleSubmit(onSubmit)
         }
+        sx={{
+          ' .MuiFormControl-root.MuiTextField-root': {
+            width: '100%',
+          },
+        }}
       >
         <Box sx={{ display: 'flex', width: '100%' }}>
           <Box sx={{ py: 1, pr: 1, width: '50%' }}>
             <Typography>
               <FormattedMessage id="textfield.name"/>
             </Typography>
-            <TextField
-              id="filled-basic"
-              variant="filled"
-              sx={{ width: "100%" }}
-              {...register("username")}
-            />
+            <CustomTextInput/>
           </Box>
           <Box sx={{ py: 1, pl: 1, width: '50%' }}>
             <Typography>
               <FormattedMessage id="textfield.email"/>
             </Typography>
-            <TextField
-              id="filled-basic"
-              variant="filled"
-              sx={{ width: "100%" }}
-              {...register("email")}
-            />
+            <CustomTextInput />
           </Box>
         </Box>
         <Box sx={{ py: 1 }}>
           <Typography>
             <FormattedMessage id="textfield.message"/>
           </Typography>
-          <TextField
-            id="filled-textarea"
-            placeholder="Placeholder"
-            multiline
-            rows={5}
-            variant="filled"
-            sx={{ width: "100%" }}
-            {...register("contents")}
-          />
+          <CustomTextInput multiline rows={5}/>
         </Box>
-        <Button
-          variant="contained"
-          type="submit"
-          disabled={isLoading}
-          sx={{
-            textTransform: "none",
-            fontSize: "1.3rem",
-          }}
-        >
+        <CustomButton variant="contained" onClick={() => {}}>
           { isLoading ? (<Typography>Sending...</Typography>) : (<FormattedMessage id="action.submitMessage" />) }
-        </Button>
+        </CustomButton>
       </Box>
     </Box>
   );

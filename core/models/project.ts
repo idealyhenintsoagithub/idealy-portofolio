@@ -1,3 +1,5 @@
+import Document from './Document';
+
 type Project = {
   id: number;
 
@@ -8,6 +10,10 @@ type Project = {
   type: string;
 
   technologies: string[];
+
+  presentationImage: Document;
+
+  images: Document[];
 };
 
 export default Project;

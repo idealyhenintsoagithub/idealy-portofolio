@@ -1,27 +1,29 @@
-import { Box, Button, Grid, Paper, Typography } from "@mui/material";
-import { useMemo } from "react";
+import { Box, CircularProgress, Grid, Paper, Typography } from "@mui/material";
 import { FormattedMessage, useIntl } from "react-intl";
 import LayoutWrapper from "@/app/layout-wrapper";
 import ShowCaseItem from "./showCaseItem";
 import { Link, useNavigate } from "react-router-dom";
 import { PROJECT_DETAIL_PATH } from "@/app/project-detail/projectDetailUrl";
-import { useGetProjectsQuery } from "@/services/project";
-import Project from "@/models/project";
+import { useGetProjectsQuery } from "@/core/services/project";
+import Project from "@/core/models/project";
 
 const ShowCase = () => {
   const intl = useIntl();
   const navigate = useNavigate();
   const { data, error, isLoading } = useGetProjectsQuery({});
 
-  if (isLoading) {
-    return null;
-  }
-
   return (
   <LayoutWrapper>
     <Typography sx={{ textAlign: 'center', my: 3 }} variant="h4">
       <FormattedMessage id="showCase.title.pageTitle" />
     </Typography>
+    {
+      isLoading && (
+        <Box sx={{ textAlign: 'center' }}>
+          <CircularProgress />
+        </Box>
+      )
+    }
     <Grid container>
       {
         data && data.map((project: Project) => (

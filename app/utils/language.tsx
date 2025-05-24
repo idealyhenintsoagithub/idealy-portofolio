@@ -36,22 +36,14 @@ const LanguageIcon = (props: LanguageIconProps) => {
   } = props;
 
   return (
-    <>
+    <Box>
       { locale === 'fr' &&  (
-        <Icon
-          imageSrc="/images/langues/france.jpg"
-          withLabel={withLabel}
-          label={locale}
-        />
+        <Icon imageSrc="/images/langues/france.jpg" withLabel={withLabel} label={locale} />
       )}
       { locale === 'en' && (
-        <Icon
-          imageSrc="/images/langues/uk.png"
-          withLabel={withLabel}
-          label={locale}
-        />
+        <Icon imageSrc="/images/langues/uk.png" withLabel={withLabel} label={locale} />
       )}
-    </>
+    </Box>
   )
 };
 

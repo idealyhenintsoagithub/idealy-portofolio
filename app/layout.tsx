@@ -89,8 +89,6 @@ const App = () => {
     return messages ? flattenMessages(messages) : {};
   }, [messages]);
 
-  console.info({ mode });
-
   return (
     <StoreProvider>
       <html lang="en">

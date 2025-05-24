@@ -1,13 +1,18 @@
-import { projectApi } from '@/services/project';
+import { projectApi } from '@/core/services/project';
+import { trainingApi } from '@/core/services/training';
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 export const store = configureStore({
   reducer: {
     [projectApi.reducerPath]: projectApi.reducer,
+    [trainingApi.reducerPath]: trainingApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(projectApi.middleware),
+    getDefaultMiddleware().concat([
+      projectApi.middleware,
+      trainingApi.middleware
+    ]),
 })
 
 setupListeners(store.dispatch);

@@ -1,9 +1,11 @@
 // Need to use the React-specific entry point to import createApi
-import Project from '@/models/project';
+import Project from '@/core/models/project';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import parseResponseCollection from './parseResponseCollection';
 
-type GetProjectsParams = {};
+type GetProjectsParams = {
+  filters?: any;
+};
 
 type GetProjectByNameParams = {
   name: string;
@@ -15,8 +17,18 @@ export const projectApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:8000/api/' }),
   endpoints: (builder) => ({
     getProjects: builder.query<Project[], GetProjectsParams>({
-      query: (params: GetProjectsParams) => `projects`,
-      transformResponse: (response) => parseResponseCollection(response),
+      query: ({ filters }: GetProjectsParams) => {
+        const urlParams = new URLSearchParams();
+        if (filters && filters.id) {
+          urlParams.set('id', [...filters.id].join(', '));
+        }
+        const url = `projects?${urlParams.toString()}`;
+
+        return {
+          url
+        };
+      },
+      transformResponse: (response) => parseResponseCollection<Project>(response),
     }),
     getProjectByName: builder.query<Project, GetProjectByNameParams>({
       query: ({ name }: GetProjectByNameParams) => {

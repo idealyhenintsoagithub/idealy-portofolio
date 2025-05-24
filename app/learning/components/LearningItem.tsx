@@ -1,9 +1,9 @@
-import { Learning } from "@/app/model/learning";
+import { Training } from "@/core/models/training";
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import { FormattedMessage, useIntl } from "react-intl";
 
 type LearningItemProps = {
-  item: Learning;
+  item: Training;
 };
 
 const LearningItem = (props: LearningItemProps) => {
@@ -15,7 +15,7 @@ const LearningItem = (props: LearningItemProps) => {
       <Box sx={{ p: 2 }}>
         <img
           src={item.coverPage?.src}
-          alt={item.coverPage?.name}
+          alt={item.coverPage?.alt}
           width="200px"
           height="200px"
         />

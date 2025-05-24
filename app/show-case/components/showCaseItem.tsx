@@ -1,6 +1,5 @@
-import { Learning } from "@/app/model/learning";
-import Project from "@/models/project";
-import { Box, Grid, Paper, Typography } from "@mui/material";
+import Project from "@/core/models/project";
+import { Box, Paper, Typography } from "@mui/material";
 import { useIntl } from "react-intl";
 
 type ShowCaseItemProps = {
@@ -13,12 +12,11 @@ const ShowCaseItem = ({ item }: ShowCaseItemProps) => {
   return (
     <Paper sx={{ display: 'flex', borderRadius: '8px' }} elevation={2}>
       <Box sx={{ p: 2 }}>
-        {/* <img
-          src={item.image.src}
-          alt={item.image.name}
-          width="200px"
-          height="200px"
-        /> */}
+        <img
+          src={`http://127.0.0.1:8000/${item.presentationImage.src}/${item.presentationImage.name}`}
+          alt={item.presentationImage.name}
+          style={{ width: '100%', height: '100%' }}
+        />
       </Box>
       <Box sx={{ p: 2 }}>
         <Typography sx={{ fontWeight: 'bold', color: '#EF5350' }}>
