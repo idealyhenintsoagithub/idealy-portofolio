@@ -50,20 +50,20 @@ const ContactMe = () => {
             <Typography>
               <FormattedMessage id="textfield.name"/>
             </Typography>
-            <CustomTextInput/>
+            <CustomTextInput sx={{ bgcolor: theme.palette.secondary.main }} />
           </Box>
           <Box sx={{ py: 1, pl: 1, width: '50%' }}>
             <Typography>
               <FormattedMessage id="textfield.email"/>
             </Typography>
-            <CustomTextInput />
+            <CustomTextInput sx={{ bgcolor: theme.palette.secondary.main }} />
           </Box>
         </Box>
         <Box sx={{ py: 1 }}>
           <Typography>
             <FormattedMessage id="textfield.message"/>
           </Typography>
-          <CustomTextInput multiline rows={5}/>
+          <CustomTextInput multiline rows={5} sx={{ bgcolor: theme.palette.secondary.main }} />
         </Box>
         <CustomButton variant="contained" onClick={() => {}}>
           { isLoading ? (<Typography>Sending...</Typography>) : (<FormattedMessage id="action.submitMessage" />) }

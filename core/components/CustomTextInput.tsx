@@ -5,6 +5,8 @@ type CustomTextInputProps = {} & TextFieldProps;
 const CustomTextInput = (props: CustomTextInputProps) => {
   const { sx, ...restProps } = props;
 
+  console.info({ sx });
+
   return (
     <TextField
       {...restProps}

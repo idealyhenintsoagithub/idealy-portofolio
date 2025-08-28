@@ -1,6 +1,6 @@
 "use client"
 import { Inter } from "next/font/google";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Grid, Paper, ThemeProvider, Box } from "@mui/material";
 import CssBaseline from '@mui/material/CssBaseline';
 import {IntlProvider } from 'react-intl';
@@ -30,8 +30,9 @@ import TechContainer from "./technologie/tech-container";
 import { HOME_URL } from "./home/home-url";
 import { PROJECT_BASE_PATH, PROJECT_DETAIL_PATH } from "./project-detail/projectDetailUrl";
 import ProjectDetail from "./project-detail/components/projectDetail";
-import { store } from './../store/store'
-import { Provider } from 'react-redux'
+import { store } from './../store/store';
+import { Provider } from 'react-redux';
+import Cookies from 'js-cookie';
 
 interface Props {
   readonly children: ReactNode;
@@ -59,18 +60,20 @@ export function flattenMessages(nestedMessages: any, prefix = ''): { [key: strin
 }
 
 const App = () => {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+  const [mode, setMode] = React.useState<string>('light');
   const [currentLocale, setCurrentLocale] = React.useState<string>('fr');
   const [messages, setMessages] = React.useState<any>(frMessages);
+  const cookie = useRef<Record<string, any>>({});
 
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode: string) => (prevMode === 'light' ? 'dark' : 'light'));
-      },
-    }),
-    [],
-  );
+  const colorMode = React.useMemo(() => ({
+    toggleColorMode: () => {
+      setMode((prev) => {
+        const val = prev === 'light' ? 'dark' : 'light';
+        Cookies.set('themeMode', val, { expires: 7 });
+        return val;
+      });
+    },
+  }), []);
 
   const localeMode = React.useMemo(() => ({
     currentLocale,
@@ -82,12 +85,23 @@ const App = () => {
       }
       
       setMessages(selectedLocale === 'fr' ? frMessages : enMessages);
+      Cookies.set('locale', selectedLocale ?? 'fr', { expires: 7 });
     },
   }), [currentLocale]);
 
   const flattenedMessages = useMemo(() => {
     return messages ? flattenMessages(messages) : {};
   }, [messages]);
+
+  useEffect(() => {
+    if (Cookies.get('locale')) {
+      setMessages(Cookies.get('locale') === 'fr' ? frMessages : enMessages);
+    }
+
+    if (Cookies.get('themeMode')) {
+      setMode(Cookies.get('themeMode') ?? 'light');
+    }
+  }, []);
 
   return (
     <StoreProvider>
