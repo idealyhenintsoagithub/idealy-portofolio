@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Button, Paper, Typography } from "@mui/material";
 import { Technologie } from "../constants/technologies";
 import { useNavigate } from "react-router-dom";

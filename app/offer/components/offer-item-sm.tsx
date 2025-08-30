@@ -1,3 +1,5 @@
+"use client";
+
 import { Typography, Box, ListItem, Paper, useTheme } from '@mui/material';
 import { OfferItemProp } from './offer-item';
 import { FormattedMessage } from 'react-intl';

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from 'react';
 import { styled, Theme, useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Unstable_Grid2';

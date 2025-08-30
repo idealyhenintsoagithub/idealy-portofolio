@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 

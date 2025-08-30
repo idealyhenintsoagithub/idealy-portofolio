@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import { useIntl } from "react-intl";
 import { useParams } from "react-router-dom";

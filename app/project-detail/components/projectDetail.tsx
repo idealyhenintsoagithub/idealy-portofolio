@@ -1,3 +1,5 @@
+"use client";
+
 import LayoutWrapper from "@/app/layout-wrapper";
 import { useGetProjectByNameQuery } from "@/core/services/project";
 import Chip from '@mui/material/Chip';

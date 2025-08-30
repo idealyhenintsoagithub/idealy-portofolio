@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import LearningItem from "./LearningItem";
 import { FormattedMessage } from "react-intl";

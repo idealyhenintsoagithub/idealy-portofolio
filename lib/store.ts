@@ -1,7 +1,5 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { combineReducers, combineSlices, configureStore } from "@reduxjs/toolkit";
-import { counterSlice } from "./features/counter/counterSlice";
-import { quotesApiSlice } from "./features/quotes/quotesApiSlice";
 import { messageSlice } from "./features/message/messageSlice";
 import { messageApi } from "./features/message/messageAPI";
 // `combineSlices` automatically combines the reducers using

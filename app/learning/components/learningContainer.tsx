@@ -1,3 +1,5 @@
+"use client";
+
 import { Box } from "@mui/material";
 import { useIntl } from "react-intl"
 import LearningList from "./LearningList";

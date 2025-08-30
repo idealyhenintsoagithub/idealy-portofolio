@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useIntl } from "react-intl";
 import OfferPresentation from "./offer-presentation";

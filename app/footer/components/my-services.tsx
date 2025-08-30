@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";

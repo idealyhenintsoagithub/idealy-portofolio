@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import { SectionTitle } from "../utils/title";
 import { ReactNode } from "react";

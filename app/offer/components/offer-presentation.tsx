@@ -1,3 +1,5 @@
+"use client";
+
 import { Grid, Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 import { FormattedMessage } from "react-intl";

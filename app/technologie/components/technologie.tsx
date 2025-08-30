@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Button, Paper, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 import { Technologie, TECHNOLOGIES_MAPS } from "../constants/technologies";

@@ -1,3 +1,5 @@
+"use client";
+
 import { Training } from "@/core/models/training";
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import { FormattedMessage, useIntl } from "react-intl";

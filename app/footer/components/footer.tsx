@@ -1,3 +1,5 @@
+"use client";
+
 import { useMemo } from "react";
 import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
 import ContactMe from "@/app/contact/contact";

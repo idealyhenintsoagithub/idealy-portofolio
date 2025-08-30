@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Button, TextField, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useMemo } from "react";
 import { FormattedMessage } from "react-intl";

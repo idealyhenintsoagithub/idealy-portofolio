@@ -1,3 +1,5 @@
+"use client";
+
 import "./navbar.css";
 import { useTheme } from "@mui/material/styles";
 import { Box, IconButton, Typography } from "@mui/material";

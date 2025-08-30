@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, Paper, Typography, useTheme } from "@mui/material";
 import { FormattedMessage } from "react-intl";

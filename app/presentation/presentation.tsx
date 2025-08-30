@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Paper, Typography, useTheme } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';

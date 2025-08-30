@@ -1,3 +1,5 @@
+"use client";
+
 import { Route, Routes } from "react-router-dom";
 import Technologie from "./components/technologie";
 import { TECH_DETAILS } from "./routes";

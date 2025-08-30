@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import MyServices from "./my-services";
 import MyAdress from "./my-adress";

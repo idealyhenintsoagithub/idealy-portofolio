@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, CircularProgress, Grid, Paper, Typography } from "@mui/material";
 import { FormattedMessage, useIntl } from "react-intl";
 import LayoutWrapper from "@/app/layout-wrapper";

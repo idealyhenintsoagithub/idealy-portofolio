@@ -1,3 +1,5 @@
+"use client";
+
 import './layout-wrapper.css';
 import { Box, BoxProps } from "@mui/material";
 import Navbar from "./home/navbar";
